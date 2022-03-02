@@ -1,0 +1,17 @@
+vendor_name = ModelSim
+source_file = 1, E:/Microprocessor Lab/bitwise.bdf
+source_file = 1, E:/Microprocessor Lab/db/bitwise.cbx.xml
+design_name = bitwise
+instance = comp, \bitout[3]~output , bitout[3]~output, bitwise, 1
+instance = comp, \bitout[2]~output , bitout[2]~output, bitwise, 1
+instance = comp, \bitout[1]~output , bitout[1]~output, bitwise, 1
+instance = comp, \bitout[0]~output , bitout[0]~output, bitwise, 1
+instance = comp, \a[3]~input , a[3]~input, bitwise, 1
+instance = comp, \b[3]~input , b[3]~input, bitwise, 1
+instance = comp, \a[2]~input , a[2]~input, bitwise, 1
+instance = comp, \b[2]~input , b[2]~input, bitwise, 1
+instance = comp, \b[1]~input , b[1]~input, bitwise, 1
+instance = comp, \a[1]~input , a[1]~input, bitwise, 1
+instance = comp, \a[0]~input , a[0]~input, bitwise, 1
+instance = comp, \b[0]~input , b[0]~input, bitwise, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, bitwise, 1

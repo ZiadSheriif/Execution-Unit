@@ -1,0 +1,11 @@
+vendor_name = ModelSim
+source_file = 1, E:/Microprocessor Lab/Assignment1.bdf
+source_file = 1, E:/Microprocessor Lab/db/Assignment1.cbx.xml
+design_name = Assignment1
+instance = comp, \Sum~output , Sum~output, Assignment1, 1
+instance = comp, \C0~output , C0~output, Assignment1, 1
+instance = comp, \A~input , A~input, Assignment1, 1
+instance = comp, \Cin~input , Cin~input, Assignment1, 1
+instance = comp, \B~input , B~input, Assignment1, 1
+instance = comp, \inst5~0 , inst5~0, Assignment1, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, Assignment1, 1

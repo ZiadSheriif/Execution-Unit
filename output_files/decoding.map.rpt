@@ -1,0 +1,597 @@
+Analysis & Synthesis report for decoding
+Sun Oct 31 20:01:51 2021
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: Reg:A|BUSMUX:inst11
+ 11. Parameter Settings for User Entity Instance: Reg:A|BUSMUX:inst10
+ 12. Parameter Settings for User Entity Instance: Reg:A|BUSMUX:inst9
+ 13. Parameter Settings for User Entity Instance: Reg:A|BUSMUX:inst
+ 14. Parameter Settings for User Entity Instance: Integration:inst3|BUSMUX:inst6
+ 15. Parameter Settings for User Entity Instance: Integration:inst3|BUSMUX:inst
+ 16. Parameter Settings for User Entity Instance: Integration:inst3|BUSMUX:inst5
+ 17. Parameter Settings for User Entity Instance: BUSMUX:inst6
+ 18. Parameter Settings for User Entity Instance: BUSMUX:inst4
+ 19. Parameter Settings for User Entity Instance: Reg:B|BUSMUX:inst11
+ 20. Parameter Settings for User Entity Instance: Reg:B|BUSMUX:inst10
+ 21. Parameter Settings for User Entity Instance: Reg:B|BUSMUX:inst9
+ 22. Parameter Settings for User Entity Instance: Reg:B|BUSMUX:inst
+ 23. Parameter Settings for User Entity Instance: BUSMUX:inst5
+ 24. Parameter Settings for User Entity Instance: Reg:C|BUSMUX:inst11
+ 25. Parameter Settings for User Entity Instance: Reg:C|BUSMUX:inst10
+ 26. Parameter Settings for User Entity Instance: Reg:C|BUSMUX:inst9
+ 27. Parameter Settings for User Entity Instance: Reg:C|BUSMUX:inst
+ 28. Parameter Settings for User Entity Instance: BUSMUX:inst9
+ 29. Parameter Settings for User Entity Instance: BUSMUX:inst7
+ 30. Parameter Settings for User Entity Instance: BUSMUX:inst8
+ 31. Post-Synthesis Netlist Statistics for Top Partition
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sun Oct 31 20:01:51 2021       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; decoding                                    ;
+; Top-level Entity Name           ; decoding                                    ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 12                                          ;
+; Total pins                      ; 23                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; decoding           ; decoding           ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-6         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++----------------------------------+-----------------+------------------------------------------+-----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                          ; Library ;
++----------------------------------+-----------------+------------------------------------------+-----------------------------------------------------------------------+---------+
+; decoding.bdf                     ; yes             ; User Block Diagram/Schematic File        ; E:/Microprocessor Lab/decoding.bdf                                    ;         ;
+; reg.bdf                          ; yes             ; Auto-Found Block Diagram/Schematic File  ; E:/Microprocessor Lab/reg.bdf                                         ;         ;
+; busmux.tdf                       ; yes             ; Megafunction                             ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/busmux.tdf     ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                             ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc    ;         ;
+; lpm_mux.tdf                      ; yes             ; Megafunction                             ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.tdf    ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                             ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc ;         ;
+; muxlut.inc                       ; yes             ; Megafunction                             ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/muxlut.inc     ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/bypassff.inc   ;         ;
+; altshift.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altshift.inc   ;         ;
+; db/mux_pjc.tdf                   ; yes             ; Auto-Generated Megafunction              ; E:/Microprocessor Lab/db/mux_pjc.tdf                                  ;         ;
+; integration.bdf                  ; yes             ; Auto-Found Block Diagram/Schematic File  ; E:/Microprocessor Lab/integration.bdf                                 ;         ;
+; db/mux_sjc.tdf                   ; yes             ; Auto-Generated Megafunction              ; E:/Microprocessor Lab/db/mux_sjc.tdf                                  ;         ;
+; fa.bdf                           ; yes             ; Auto-Found Block Diagram/Schematic File  ; E:/Microprocessor Lab/fa.bdf                                          ;         ;
+; assignment1.bdf                  ; yes             ; Auto-Found Block Diagram/Schematic File  ; E:/Microprocessor Lab/assignment1.bdf                                 ;         ;
+; bitwise.bdf                      ; yes             ; Auto-Found Block Diagram/Schematic File  ; E:/Microprocessor Lab/bitwise.bdf                                     ;         ;
++----------------------------------+-----------------+------------------------------------------+-----------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 14        ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 20        ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 7         ;
+;     -- 5 input functions                    ; 6         ;
+;     -- 4 input functions                    ; 1         ;
+;     -- <=3 input functions                  ; 6         ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 12        ;
+;                                             ;           ;
+; I/O pins                                    ; 23        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 12        ;
+; Total fan-out                               ; 162       ;
+; Average fan-out                             ; 2.08      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                         ;
++--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                            ; Entity Name ; Library Name ;
++--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+-------------+--------------+
+; |decoding                            ; 20 (2)              ; 12 (0)                    ; 0                 ; 0          ; 23   ; 0            ; |decoding                                                                      ; decoding    ; work         ;
+;    |Integration:inst3|               ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decoding|Integration:inst3                                                    ; Integration ; work         ;
+;       |FA:inst1|                     ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decoding|Integration:inst3|FA:inst1                                           ; FA          ; work         ;
+;          |Assignment1:inst2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decoding|Integration:inst3|FA:inst1|Assignment1:inst2                         ; Assignment1 ; work         ;
+;          |Assignment1:inst3|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decoding|Integration:inst3|FA:inst1|Assignment1:inst3                         ; Assignment1 ; work         ;
+;       |busmux:inst6|                 ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decoding|Integration:inst3|busmux:inst6                                       ; busmux      ; work         ;
+;          |lpm_mux:$00000|            ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decoding|Integration:inst3|busmux:inst6|lpm_mux:$00000                        ; lpm_mux     ; work         ;
+;             |mux_sjc:auto_generated| ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decoding|Integration:inst3|busmux:inst6|lpm_mux:$00000|mux_sjc:auto_generated ; mux_sjc     ; work         ;
+;    |Reg:A|                           ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |decoding|Reg:A                                                                ; Reg         ; work         ;
+;    |Reg:B|                           ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |decoding|Reg:B                                                                ; Reg         ; work         ;
+;    |Reg:C|                           ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |decoding|Reg:C                                                                ; Reg         ; work         ;
+;    |busmux:inst6|                    ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decoding|busmux:inst6                                                         ; busmux      ; work         ;
+;       |lpm_mux:$00000|               ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decoding|busmux:inst6|lpm_mux:$00000                                          ; lpm_mux     ; work         ;
+;          |mux_sjc:auto_generated|    ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decoding|busmux:inst6|lpm_mux:$00000|mux_sjc:auto_generated                   ; mux_sjc     ; work         ;
+;    |busmux:inst9|                    ; 8 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decoding|busmux:inst9                                                         ; busmux      ; work         ;
+;       |lpm_mux:$00000|               ; 8 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decoding|busmux:inst9|lpm_mux:$00000                                          ; lpm_mux     ; work         ;
+;          |mux_sjc:auto_generated|    ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decoding|busmux:inst9|lpm_mux:$00000|mux_sjc:auto_generated                   ; mux_sjc     ; work         ;
++--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 12    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 12    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------+
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |decoding|Integration:inst3|busmux:inst6|lpm_mux:$00000|mux_sjc:auto_generated|l1_w3_n0_mux_dataout ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |decoding|busmux:inst6|lpm_mux:$00000|mux_sjc:auto_generated|l1_w3_n0_mux_dataout                   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |decoding|busmux:inst9|lpm_mux:$00000|mux_sjc:auto_generated|l1_w3_n0_mux_dataout                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:A|BUSMUX:inst11 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; WIDTH          ; 1     ; Untyped                                 ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:A|BUSMUX:inst10 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; WIDTH          ; 1     ; Untyped                                 ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:A|BUSMUX:inst9 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; WIDTH          ; 1     ; Untyped                                ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:A|BUSMUX:inst ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; WIDTH          ; 1     ; Untyped                               ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Integration:inst3|BUSMUX:inst6 ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; WIDTH          ; 4     ; Untyped                                            ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Integration:inst3|BUSMUX:inst ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; WIDTH          ; 4     ; Untyped                                           ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Integration:inst3|BUSMUX:inst5 ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; WIDTH          ; 4     ; Untyped                                            ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst6 ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; WIDTH          ; 4     ; Untyped                          ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst4 ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; WIDTH          ; 4     ; Untyped                          ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:B|BUSMUX:inst11 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; WIDTH          ; 1     ; Untyped                                 ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:B|BUSMUX:inst10 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; WIDTH          ; 1     ; Untyped                                 ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:B|BUSMUX:inst9 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; WIDTH          ; 1     ; Untyped                                ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:B|BUSMUX:inst ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; WIDTH          ; 1     ; Untyped                               ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst5 ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; WIDTH          ; 4     ; Untyped                          ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:C|BUSMUX:inst11 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; WIDTH          ; 1     ; Untyped                                 ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:C|BUSMUX:inst10 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; WIDTH          ; 1     ; Untyped                                 ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:C|BUSMUX:inst9 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; WIDTH          ; 1     ; Untyped                                ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:C|BUSMUX:inst ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; WIDTH          ; 1     ; Untyped                               ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst9 ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; WIDTH          ; 4     ; Untyped                          ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst7 ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; WIDTH          ; 4     ; Untyped                          ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst8 ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; WIDTH          ; 4     ; Untyped                          ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 12                          ;
+;     ENA               ; 12                          ;
+; arriav_lcell_comb     ; 20                          ;
+;     normal            ; 20                          ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 3                           ;
+;         4 data inputs ; 1                           ;
+;         5 data inputs ; 6                           ;
+;         6 data inputs ; 7                           ;
+; boundary_port         ; 23                          ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 2.44                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Sun Oct 31 20:01:41 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off decoding -c decoding
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file decoding.bdf
+    Info (12023): Found entity 1: decoding
+Info (12127): Elaborating entity "decoding" for the top level hierarchy
+Warning (12125): Using design file reg.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Reg
+Info (12128): Elaborating entity "Reg" for hierarchy "Reg:A"
+Info (12128): Elaborating entity "BUSMUX" for hierarchy "Reg:A|BUSMUX:inst11"
+Info (12130): Elaborated megafunction instantiation "Reg:A|BUSMUX:inst11"
+Info (12133): Instantiated megafunction "Reg:A|BUSMUX:inst11" with the following parameter:
+    Info (12134): Parameter "WIDTH" = "1"
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "Reg:A|BUSMUX:inst11|lpm_mux:$00000" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/busmux.tdf Line: 44
+Info (12131): Elaborated megafunction instantiation "Reg:A|BUSMUX:inst11|lpm_mux:$00000", which is child of megafunction instantiation "Reg:A|BUSMUX:inst11" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/busmux.tdf Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_pjc.tdf
+    Info (12023): Found entity 1: mux_pjc File: E:/Microprocessor Lab/db/mux_pjc.tdf Line: 23
+Info (12128): Elaborating entity "mux_pjc" for hierarchy "Reg:A|BUSMUX:inst11|lpm_mux:$00000|mux_pjc:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
+Warning (12125): Using design file integration.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Integration
+Info (12128): Elaborating entity "Integration" for hierarchy "Integration:inst3"
+Info (12128): Elaborating entity "BUSMUX" for hierarchy "Integration:inst3|BUSMUX:inst6"
+Info (12130): Elaborated megafunction instantiation "Integration:inst3|BUSMUX:inst6"
+Info (12133): Instantiated megafunction "Integration:inst3|BUSMUX:inst6" with the following parameter:
+    Info (12134): Parameter "WIDTH" = "4"
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "Integration:inst3|BUSMUX:inst6|lpm_mux:$00000" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/busmux.tdf Line: 44
+Info (12131): Elaborated megafunction instantiation "Integration:inst3|BUSMUX:inst6|lpm_mux:$00000", which is child of megafunction instantiation "Integration:inst3|BUSMUX:inst6" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/busmux.tdf Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_sjc.tdf
+    Info (12023): Found entity 1: mux_sjc File: E:/Microprocessor Lab/db/mux_sjc.tdf Line: 23
+Info (12128): Elaborating entity "mux_sjc" for hierarchy "Integration:inst3|BUSMUX:inst6|lpm_mux:$00000|mux_sjc:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
+Warning (12125): Using design file fa.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: FA
+Info (12128): Elaborating entity "FA" for hierarchy "Integration:inst3|FA:inst1"
+Warning (12125): Using design file assignment1.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Assignment1
+Info (12128): Elaborating entity "Assignment1" for hierarchy "Integration:inst3|FA:inst1|Assignment1:inst4"
+Warning (12125): Using design file bitwise.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: bitwise
+Info (12128): Elaborating entity "bitwise" for hierarchy "Integration:inst3|bitwise:inst2"
+Info (12128): Elaborating entity "BUSMUX" for hierarchy "BUSMUX:inst8"
+Info (12130): Elaborated megafunction instantiation "BUSMUX:inst8"
+Info (12133): Instantiated megafunction "BUSMUX:inst8" with the following parameter:
+    Info (12134): Parameter "WIDTH" = "4"
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 55 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 12 output pins
+    Info (21061): Implemented 32 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4850 megabytes
+    Info: Processing ended: Sun Oct 31 20:01:51 2021
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:20
+
+

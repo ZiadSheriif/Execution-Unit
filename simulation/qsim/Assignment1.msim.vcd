@@ -1,0 +1,94 @@
+$comment
+	File created using the following command:
+		vcd file Assignment1.msim.vcd -direction
+$end
+$date
+	Sat Oct 16 12:48:53 2021
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module Assignment1_vlg_vec_tst $end
+$var reg 1 ! A $end
+$var reg 1 " B $end
+$var reg 1 # Cin $end
+$var wire 1 $ C0 $end
+$var wire 1 % Sum $end
+
+$scope module i1 $end
+$var wire 1 & gnd $end
+$var wire 1 ' vcc $end
+$var wire 1 ( unknown $end
+$var tri1 1 ) devclrn $end
+$var tri1 1 * devpor $end
+$var tri1 1 + devoe $end
+$var wire 1 , ~QUARTUS_CREATED_GND~I_combout $end
+$var wire 1 - A~input_o $end
+$var wire 1 . Cin~input_o $end
+$var wire 1 / B~input_o $end
+$var wire 1 0 inst1~combout $end
+$var wire 1 1 inst5~0_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0#
+0$
+0%
+0&
+1'
+x(
+1)
+1*
+1+
+0,
+0-
+0.
+0/
+00
+01
+$end
+#90000
+1!
+1"
+1-
+1/
+11
+1$
+#160000
+0!
+0"
+0-
+0/
+01
+0$
+#560000
+1#
+1!
+1"
+1.
+1-
+1/
+11
+10
+1%
+1$
+#570000
+0#
+0!
+0"
+0.
+0-
+0/
+01
+00
+0%
+0$
+#1000000
