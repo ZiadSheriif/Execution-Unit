@@ -36,7 +36,7 @@ able to do the following commands:
 <li> Clone the repository
 
 ```
-git clone https://github.com/EslamAsHhraf/Execution_Unit
+git clone https://github.com/ZiadSheriif/EU
 ```
 
 </li>
@@ -44,7 +44,7 @@ git clone https://github.com/EslamAsHhraf/Execution_Unit
 <li> Main File is 
 
 ```
-Execution_Unit/Execution Unit/ExecutionUnit.bdf
+Eu/Execution Unit/ExecutionUnit.bdf
 ```
 </li>
 <hr>
