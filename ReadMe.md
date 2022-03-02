@@ -10,7 +10,6 @@
 - <a href ="#about"> 📙 About</a>
 - <a href ="#use"> 💻 Get Started</a>
 - <a href ="#Screenshots"> 📷 Demo Screenshots</a>
-- <a href ="#Contributors"> ✨ Contributors</a>
 <hr style="background-color: #4b4c60"></hr>
 
 
